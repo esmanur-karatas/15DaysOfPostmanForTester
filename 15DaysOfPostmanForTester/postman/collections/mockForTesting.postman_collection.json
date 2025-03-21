@@ -1,0 +1,16 @@
+{
+	"info": {
+		"_postman_id": "55344da0-ae78-407b-8d14-787b571dfd98",
+		"name": "mockForTesting",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29142931",
+		"_collection_link": "https://www.postman.com/dtg111/workspace/esmanur-workspace/collection/29142931-55344da0-ae78-407b-8d14-787b571dfd98?action=share&source=collection_link&creator=29142931"
+	},
+	"item": [],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://fa6fb6f8-e694-4964-befc-fd8d6ff03c32.mock.pstmn.io"
+		}
+	]
+}

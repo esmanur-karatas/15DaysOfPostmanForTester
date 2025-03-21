@@ -1,0 +1,49 @@
+{
+	"info": {
+		"_postman_id": "45d27144-8e5e-46eb-b47e-612db2b12e18",
+		"name": "Day 15: Submit for badge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29142931",
+		"_collection_link": "https://www.postman.com/dtg111/workspace/esmanur-workspace/collection/29142931-45d27144-8e5e-46eb-b47e-612db2b12e18?action=share&source=collection_link&creator=29142931"
+	},
+	"item": [
+		{
+			"name": "submit",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/submit",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"submit"
+					]
+				},
+				"description": "🚨 **Important Announcement: Badge Submissions Have Ended** 🚨\n\nThe deadline for badge submissions for this course has now passed. Unfortunately, we are no longer accepting submissions, and no additional badges will be awarded.\n\nFor further Postman training and to explore new challenges, please visit the [Postman Academy](https://academy.postman.com).\n\nFind the `secret` environment. Select it as the active environment, and **Send** this request for more instructions."
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
