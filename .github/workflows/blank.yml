@@ -1,0 +1,60 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      # Runs a set of commands using the runners shell
+       - name: Install Postman CLI
+        run: |
+          curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh
+      - name: Login to Postman CLI
+        run: postman login --with-api-key ${{ secrets.POSTMAN_API_KEY }}
+      - name: Run API tests
+        run: |
+          postman collection run "29142931-fd467210-e2b7-4dc5-a1f9-b8d3dee5c9f0" -e "29142931-ae08936d-17cd-45ba-adb3-05411526f905" --integration-id "175637-${{ github.run_id }}"
+          postman collection run "29142931-8ad8e5ca-aa1b-451b-8c5e-0480485aee3e" -e "29142931-ae08936d-17cd-45ba-adb3-05411526f905" --integration-id "175637-${{ github.run_id }}"
+          postman collection run "29142931-268f65c2-8c82-42fc-9d79-f13faed4c583" -e "29142931-ae08936d-17cd-45ba-adb3-05411526f905" --integration-id "175637-${{ github.run_id }}"
+          postman collection run "29142931-b1dff555-a5fb-4157-8321-f6e2224d6a22" -e "29142931-ae08936d-17cd-45ba-adb3-05411526f905" --integration-id "175637-${{ github.run_id }}"
+          postman collection run "29142931-2dea082b-4841-4d8b-b765-eb9f8e09d8b8" -e "29142931-ae08936d-17cd-45ba-adb3-05411526f905" --integration-id "175637-${{ github.run_id }}"
+          postman collection run "29142931-be999534-e2a0-4787-abb7-889746665de6" -e "29142931-ae08936d-17cd-45ba-adb3-05411526f905" --integration-id "175637-${{ github.run_id }}"
+          postman collection run "29142931-568353ae-f330-474a-9464-c5edf55e5f90" -e "29142931-ae08936d-17cd-45ba-adb3-05411526f905" --integration-id "175637-${{ github.run_id }}"
+          postman collection run "29142931-a7cf0ada-1f74-48bb-91d8-3d7b8859a343" -e "29142931-ae08936d-17cd-45ba-adb3-05411526f905" --integration-id "175637-${{ github.run_id }}"
+          postman collection run "29142931-8e85ec14-d79c-4c39-a563-5fe3fff3f4da" -e "29142931-ae08936d-17cd-45ba-adb3-05411526f905" --integration-id "175637-${{ github.run_id }}"
+          postman collection run "29142931-ee2072a9-deb3-4081-9512-b7167252bff1" -e "29142931-ae08936d-17cd-45ba-adb3-05411526f905" --integration-id "175637-${{ github.run_id }}"
+          postman collection run "29142931-1606b0cc-16c8-4a34-915b-89c3b6bd7c23" -e "29142931-ae08936d-17cd-45ba-adb3-05411526f905" --integration-id "175637-${{ github.run_id }}"
+          postman collection run "29142931-e58401cf-f1ae-493d-94fc-76d14f8b07df" -e "29142931-ae08936d-17cd-45ba-adb3-05411526f905" --integration-id "175637-${{ github.run_id }}"
+          postman collection run "29142931-2f139e88-ca86-4d7f-b97d-2fc72b058e4b" -e "29142931-ae08936d-17cd-45ba-adb3-05411526f905" --integration-id "175637-${{ github.run_id }}"
+          postman collection run "29142931-2d61b2d0-6c5a-4326-b0d8-7eecefbe798b" -e "29142931-ae08936d-17cd-45ba-adb3-05411526f905" --integration-id "175637-${{ github.run_id }}"
+          postman collection run "29142931-1a31e130-31d8-42ae-a8aa-4009a5c9f627" -e "29142931-ae08936d-17cd-45ba-adb3-05411526f905" --integration-id "175637-${{ github.run_id }}"
+          postman collection run "29142931-8498bff6-b16d-4358-a561-36de9e3297cd" -e "29142931-ae08936d-17cd-45ba-adb3-05411526f905" --integration-id "175637-${{ github.run_id }}"
+          postman collection run "29142931-8a6d8e22-4a54-45cc-abd2-6cc6111486e8" -e "29142931-ae08936d-17cd-45ba-adb3-05411526f905" --integration-id "175637-${{ github.run_id }}"
+          postman collection run "29142931-a4ca7f4c-7256-4bbc-9ef2-499012db4842" -e "29142931-ae08936d-17cd-45ba-adb3-05411526f905" --integration-id "175637-${{ github.run_id }}"
+          postman collection run "29142931-353cfb57-de1a-42b7-9ec9-ca021229167a" --integration-id "175637-${{ github.run_id }}"
+          # Lint your API using Postman CLI
+          postman api lint 0ca07da8-a755-4015-a687-a83c53ca9163 --integration-id 175637
